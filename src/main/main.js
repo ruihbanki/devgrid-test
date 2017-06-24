@@ -4,12 +4,12 @@ import HeaderMain from './header-main';
 import MyList from './my-list';
 import SearchBooks from './search-books';
 import Report from './report';
-import '../css/layout.css';
+import '../css/main.css';
 
 class Main extends React.Component {
     render() {
         return (
-            <div className="Layout Layout--headerSmall">
+            <div className="Main Main--headerSmall">
                 <div className="_header">
                     <HeaderMain />
                 </div>
@@ -19,6 +19,9 @@ class Main extends React.Component {
                         <Route path={this.props.match.path + '/search-books'} component={SearchBooks}/>
                         <Route path={this.props.match.path + '/report'} component={Report}/>
                     </Switch>
+                </div>
+                <div className="_footer">
+                    Created by Rui Hiroshi Banki
                 </div>
             </div>
         );

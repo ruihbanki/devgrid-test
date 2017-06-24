@@ -9,7 +9,7 @@ class HeaderMain extends React.Component {
             <div className="Header">
                 <div className="_bar">
                     <div className="_icon">
-                        
+                        <Link className="material-icons" to="/">face</Link>
                     </div>
                     <div className="_title">
                         Open Library

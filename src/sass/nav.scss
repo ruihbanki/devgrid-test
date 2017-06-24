@@ -23,7 +23,8 @@
                     text-align: center; 
                     text-transform: uppercase;
                     color: $color-secondary;
-                    &.is-active {
+                    font-size: 14px;
+                    &.is-active { 
                         color: #333;
                         &:before {
                             content: '';
@@ -45,7 +46,7 @@
     .Nav-tab {        
         >ul {
             margin: auto;
-            max-width: 480px;
+            max-width: 360px; 
         }       
     }
 }
@@ -56,6 +57,5 @@
 }
 
 @media #{$query-lg} {
-    @include Nav();
     @include Nav-tab-lg();
 }

@@ -11,7 +11,7 @@ class NavTab extends React.Component {
                         <NavLink to="/main/my-list" activeClassName="is-active">My List</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/main/search-books" activeClassName="is-active">Search books</NavLink>
+                        <NavLink to="/main/search-books" activeClassName="is-active">Search</NavLink>
                     </li>
                     <li>
                         <NavLink to="/main/report" activeClassName="is-active">Report</NavLink>

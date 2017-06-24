@@ -1,7 +1,7 @@
 @import 'variables';
 
-@mixin Layout-xs() {
-    .Layout {
+@mixin Main-xs() {
+    .Main {
         position: relative;
         height: 100%;
         >._header {
@@ -12,11 +12,22 @@
             box-sizing: border-box;
             position: relative;
         }
+        >._footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: #aaa;
+            font-size: 13px;
+            line-height: 40px;
+            text-align: center;
+            background: #fff;
+        }
     }
 }
 
-@mixin Layout-lg() {
-    .Layout {                
+@mixin Main-lg() {
+    .Main {                
         &:before {
             content: '';
             position: absolute;
@@ -34,29 +45,25 @@
             width: 960px;
             min-height: 600px;
             margin: auto;
-            padding: 40px;
             background: #fff;
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
         }
     }
 }
 
-@mixin LayoutHeaderModifier($name, $header-height) {
-    .Layout--#{$name} {
+@mixin MainHeaderModifier($name, $header-height) {
+    .Main--#{$name} {
         >._header {
-            height: $header-height;
-        }
-        >._content {
-            
+            height: $header-height; 
         }
     }
 }
 
 @media #{$query-xs} {
-    @include Layout-xs();
-    @include LayoutHeaderModifier('headerSmall', 88px);
+    @include Main-xs();
+    @include MainHeaderModifier('headerSmall', 88px);
 }
 
 @media #{$query-lg} {
-    @include Layout-lg();
+    @include Main-lg();
 }

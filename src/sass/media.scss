@@ -1,0 +1,43 @@
+@import '_variables';
+
+@mixin Media {
+    .Media {   
+        display: flex;           
+        >._obj {
+            padding-right: 8px; 
+        }
+        >._body {
+            padding: 8px 0;
+            >._title {
+                display: block;  
+                font-size: 15px;
+                line-height: 24px;
+                font-weight: normal;
+            }
+            >._detail {
+                display: block;
+                font-weight: 400;
+                font-size: 13px;
+                opacity: 0.54;
+            }
+        }           
+    }
+}
+
+@mixin Media-check {
+    .Media-check {           
+        >._check {
+            flex-basis: 48px;
+            >input {
+                width: 16px;
+                height: 16px;
+                margin: 20px;  
+            }
+        }
+    }
+}
+
+@media #{$query-xs} {
+    @include Media();
+    @include Media-check();
+}
