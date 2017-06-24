@@ -1,0 +1,62 @@
+@import 'variables';
+
+@mixin Layout-xs() {
+    .Layout {
+        position: relative;
+        height: 100%;
+        >._header {
+            box-sizing: border-box;
+            position: relative;
+        }
+        >._content {
+            box-sizing: border-box;
+            position: relative;
+        }
+    }
+}
+
+@mixin Layout-lg() {
+    .Layout {                
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 248px;
+            background: $color-primary;
+        }
+        >._header {
+            width: 960px;
+            margin: auto;
+        }
+        >._content {            
+            width: 960px;
+            min-height: 600px;
+            margin: auto;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@mixin LayoutHeaderModifier($name, $header-height) {
+    .Layout--#{$name} {
+        >._header {
+            height: $header-height;
+        }
+        >._content {
+            
+        }
+    }
+}
+
+@media #{$query-xs} {
+    @include Layout-xs();
+    @include LayoutHeaderModifier('headerSmall', 88px);
+}
+
+@media #{$query-lg} {
+    @include Layout-lg();
+}

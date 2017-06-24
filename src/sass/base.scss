@@ -1,0 +1,16 @@
+@import '_variables';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Roboto;    
+}
+a {
+    text-decoration: none;
+}
+
+#root {
+    height: 100%;
+}

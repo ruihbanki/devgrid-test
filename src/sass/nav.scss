@@ -1,0 +1,61 @@
+@import '_variables';
+
+@mixin Nav {
+    .Nav {        
+        >ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }       
+    }
+}
+
+@mixin Nav-tab-xs {
+    .Nav-tab {        
+        >ul {
+            display: flex;
+            >li {
+                flex-basis: 33.33%;
+                >a{
+                    display: block;
+                    position: relative;
+                    line-height: 40px;
+                    text-align: center; 
+                    text-transform: uppercase;
+                    color: $color-secondary;
+                    &.is-active {
+                        color: #333;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            height: 3px;
+                            background: $color-secondary;
+                        }
+                    }
+                }                
+            }
+        }       
+    }
+}
+
+@mixin Nav-tab-lg {
+    .Nav-tab {        
+        >ul {
+            margin: auto;
+            max-width: 480px;
+        }       
+    }
+}
+
+@media #{$query-xs} {
+    @include Nav();
+    @include Nav-tab-xs();
+}
+
+@media #{$query-lg} {
+    @include Nav();
+    @include Nav-tab-lg();
+}

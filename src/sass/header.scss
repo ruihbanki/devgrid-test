@@ -1,0 +1,30 @@
+@import 'variables';
+
+@mixin Header {
+    .Header {
+        height: 100%;
+        >._bar {
+            display: flex; 
+            height: 48px;
+            line-height: 48px;
+            background: $color-primary;
+            >._icon {
+                flex-basis: 48px;
+            }
+            >._title {
+                
+            }
+            >._actions {
+                flex-basis: 48px;
+            }
+        }
+        >._content {
+            height: 40px;
+            background: $color-primary;
+        }
+    }
+}
+
+@media #{$query-xs} {
+    @include Header;
+}
