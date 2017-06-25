@@ -5,51 +5,55 @@
         position: relative;
         padding: 16px;
         background: lighten($color-primary, 8);
-        >input {
-            box-sizing: border-box; 
-            width: calc(100% - 48px);
-            height: 32px;
-            padding: 4px;
-            border: 0;
-            border-radius: 2px;
-        }
-        >button {
-            position: absolute;
-            top: 16px;
-            width: 32px;
-            height: 32px;
-            padding: 4px;
-            line-height: 32px;
-            background: transparent;
-            border: 0;
-            &._clear {
-                right: 64px;
-                font-size: 8px;
-                color: #aaa;
+        >form {
+            >input {
+                box-sizing: border-box; 
+                width: calc(100% - 48px);
+                height: 32px;
+                padding: 4px;
+                border: 0;
+                border-radius: 2px;
             }
-            &._search {
-                right: 20px;
-                font-size: 16px;
-                color: $color-secondary;
+            >button {
+                position: absolute;
+                top: 16px;
+                width: 32px;
+                height: 32px;
+                padding: 4px;
+                line-height: 32px;
+                background: transparent;
+                border: 0;
+                &._clear {
+                    right: 64px;
+                    font-size: 8px;
+                    color: #aaa;
+                }
+                &._search {
+                    right: 20px;
+                    font-size: 16px;
+                    color: $color-secondary;
+                }
             }
         }
     }
 }
 
 @mixin SearchBar-lg() {
-    .SearchBar {                
-        >input {
-            width: 400px;
-            margin: 0 0 0 240px;
-        }
-        >button {
-            &._clear {
-                right: 304px;
+    .SearchBar {       
+        >form {
+            >input {
+                width: 400px;
+                margin: 0 0 0 240px;
             }
-            &._search {
-                right: 264px;
-            }
-        }       
+            >button {
+                &._clear {
+                    right: 304px;
+                }
+                &._search {
+                    right: 264px;
+                }
+            }       
+        }         
     }
 }
 

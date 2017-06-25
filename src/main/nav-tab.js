@@ -8,7 +8,7 @@ class NavTab extends React.Component {
             <div className="Nav Nav-tab">
                 <ul>
                     <li>
-                        <NavLink to="/main/my-list" activeClassName="is-active">My List</NavLink>
+                        <NavLink to="/main/mylist" activeClassName="is-active">My List</NavLink>
                     </li>
                     <li>
                         <NavLink to="/main/search-books" activeClassName="is-active">Search</NavLink>
