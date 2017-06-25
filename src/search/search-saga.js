@@ -11,11 +11,13 @@ function* searchBooks(action) {
         const store = yield select();
         const keywords = store.search.keywords;
         const data = yield call(openLibraryService.search, keywords); 
+        console.log(data)
         yield put({
             type: Actions.SEARCH_SEARCH_BOOKS + '_SUCCESS', 
             data
         });     
     } catch (error) {
+        console.log(error);
         yield put({
             type: Actions.SEARCH_SEARCH_BOOKS + '_ERROR', 
             error

@@ -1,0 +1,30 @@
+@import '_variables';
+
+@mixin Button-xs {
+    .Button {       
+        width: 100%; 
+        height: 40px;
+        background: $color-secondary;
+        border: 0;
+        color: #fff;
+        text-transform: uppercase;
+        &:hover {
+            background: lighten( $color-secondary, 10);
+        }     
+    }
+}
+
+@mixin Button-lg {
+    .Button {       
+        width: auto; 
+        padding: 0 40px;
+    }
+}
+
+@media #{$query-xs} {
+    @include Button-xs();
+}
+
+@media #{$query-lg} {
+    @include Button-lg();
+}

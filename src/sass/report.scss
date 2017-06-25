@@ -1,0 +1,50 @@
+@import 'variables';
+
+@mixin Report-xs {
+    .Report {
+        box-sizing: border-box;
+        padding: 4px;
+        overflow: hidden;
+        >section {
+            >h1 {
+                margin: 0;
+                padding: 16px 8px;
+                font-weight: normal;
+                font-size: 24px;
+                color: #333;
+            }
+            >ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                >li {
+                    box-sizing: border-box;
+                    float: left; 
+                    width: (100%/4);
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
+
+@mixin Report-lg {
+    .Report {
+        padding: 40px; 
+        >section {
+            >ul {
+                >li {
+                    width: (100%/8);
+                }
+            }
+        }
+    }
+}
+
+@media #{$query-xs} {
+    @include Report-xs();
+}
+
+@media #{$query-lg} {
+    @include Report-lg();
+}

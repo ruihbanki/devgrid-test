@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import Mylist from './mylist';
+import Book from './book';
 import * as mylistActions from '../mylist/mylist-actions';
 
 const mapStateToProps = (state) => {
     return {
-        books: state.mylist.books
+        book: state.mylist.bookSelected
     };
 };
 
@@ -13,8 +13,11 @@ const mapDispatchToProps = (dispatch) => {
         onAddBook: (book) => {
             dispatch(mylistActions.addBook(book));
         },
-        onViewBook: (book) => {
-            dispatch(mylistActions.viewBook(book));
+        onDeleteBook: (book) => {
+            dispatch(mylistActions.deleteBook(book));
+        },
+        onMarkAsReaded: (book) => {
+            dispatch(mylistActions.markBookAsReaded(book));
         }
     };
 };
@@ -22,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Mylist);
+)(Book);

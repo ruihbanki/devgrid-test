@@ -15,14 +15,18 @@ class Mylist extends React.Component {
 
     renderItems() {
         return this.props.books.map(item => (
-            <li>  
-                <BookThumbnail 
-                    key={item.key} 
+            <li key={item.key}>  
+                <BookThumbnail                     
                     book={item}
-                    size={'L'}
-                    onCheck={this.props.onAddBook} />
+                    size="M"
+                    onClick={this.props.onViewBook}
+                    to={this.getLink(item)} />
             </li>
         ));
+    }
+
+    getLink(book) {
+        return '/book/' + book.key.split('/')[2]
     }
 }
 

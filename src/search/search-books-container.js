@@ -6,7 +6,8 @@ import * as searchActions from './search-actions';
 const mapStateToProps = (state) => {
     return {
         keywords: state.search.keywords,
-        books: state.search.books
+        books: state.search.books,
+        mylistBooks: state.mylist.books
     };
 };
 

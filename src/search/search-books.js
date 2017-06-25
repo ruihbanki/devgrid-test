@@ -32,6 +32,7 @@ class SearchBooks extends React.Component {
             <BookItem 
                 key={item.key} 
                 book={item}
+                mylistBooks={this.props.mylistBooks}
                 onCheck={this.props.onAddBook} />
         ));
     }
@@ -39,6 +40,8 @@ class SearchBooks extends React.Component {
 
 class BookItem extends React.Component {
     render() {
+        const isAdded = this.bookIsAdded(this.props.book);
+        const checked = isAdded ? <i className="material-icons">check</i> : null;
         return (
             <li>
                 <label 
@@ -47,7 +50,7 @@ class BookItem extends React.Component {
                         this.props.onCheck(this.props.book);
                     }}>
                     <div className="_check">
-                        <input type="checkbox"/>
+                        {checked}
                     </div>
                     <div className="_obj">
                         <BookThumbnail book={this.props.book} size={'S'}/>
@@ -63,6 +66,15 @@ class BookItem extends React.Component {
                 </label>
             </li>
         );
+    }
+
+    bookIsAdded(book) {
+        for (let item of this.props.mylistBooks) {
+            if (book.key === item.key) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

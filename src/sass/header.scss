@@ -2,6 +2,7 @@
 
 @mixin Header {
     .Header {
+        position: relative;
         height: 100%;
         >._bar {
             display: flex; 
@@ -10,21 +11,132 @@
             background: $color-primary;
             >._icon {
                 flex-basis: 48px;
+                >a {
+                    @include Icon();
+                }
             }
             >._title {
-                
+                position: relative;
+                flex-basis: 100%;
+                line-height: 48px;
+                color: #333;
+                font-size: 14px;
             }
             >._actions {
                 flex-basis: 48px;
+                >a {
+                    @include Icon();
+                }
             }
         }
         >._content {
-            height: 40px;
+            position: absolute;
+            top: 48px;
+            right: 0;
+            bottom: 0;
+            left: 0;
             background: $color-primary;
         }
     }
 }
 
-@media #{$query-xs} {
+@mixin Header-main {
+    .Header-main { 
+        >._content {
+            >._img {
+                position: absolute;
+                left: 50%; 
+                margin-left: -80px;
+                >img {
+                    width: 160px;
+                }
+            }
+            >._nav {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+@mixin Header-book-xs {
+    .Header-book { 
+        >._bar {
+            >._title {
+                >span {
+                    position: absolute;
+                    top: 160px;
+                    left: 80px;
+                    z-index: 1;
+                    font-size: 18px;
+                }
+            }
+        }          
+        >._content {          
+            >._img {
+                position: absolute;
+                left: 50%; 
+                margin-left: -80px;
+                >img {
+                    width: 160px;
+                }
+            }
+            >._thumbnail {
+                position: absolute;
+                top: 120px;
+                left: 16px;
+                width: 100px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@mixin Header-book-lg {
+    .Header-book { 
+        >._bar {
+            >._title {
+                >span {
+                    position: absolute;
+                    top: 160px;
+                    left: 148px;
+                    z-index: 1;
+                    font-size: 24px;
+                }
+            }
+        }          
+        >._content {          
+            >._thumbnail {
+                top: 112px;
+                left: 40px;
+                width: 140px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+
+@mixin Icon {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 28px;
+    color: $color-secondary;
+    &:hover {
+        color: lighten($color-secondary, 10);
+    }   
+}
+
+@media #{$query-xs} { 
     @include Header;
+    @include Header-main;
+    @include Header-book-xs;
+}
+
+@media #{$query-lg} { 
+    @include Header-book-lg;
 }

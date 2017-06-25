@@ -8,6 +8,7 @@
         >._header {
             box-sizing: border-box;
             position: relative;
+            height: 212px;
         }
         >._content {
             box-sizing: border-box;
@@ -35,7 +36,7 @@
             top: 0;
             right: 0;
             left: 0;
-            height: 248px;
+            height: 380px; 
             background: $color-primary;
         }
         >._header {
@@ -60,11 +61,30 @@
     }
 }
 
+@mixin Main-book-xs() {
+    .Main-book {
+        >._content {
+            padding: 108px 16px 16px 16px;
+        } 
+    }
+}
+
+@mixin Main-book-lg() {
+    .Main-book {
+        >._content {
+            padding: 160px 40px 40px 40px;
+        } 
+    }
+}
+
 @media #{$query-xs} {
     @include Main-xs();
     @include MainHeaderModifier('headerSmall', 88px);
+    @include MainHeaderModifier('headerLarge', 220px);
+    @include Main-book-xs();
 }
 
 @media #{$query-lg} {
     @include Main-lg();
+    @include Main-book-lg();
 }
